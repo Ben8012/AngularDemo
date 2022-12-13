@@ -1,0 +1,15 @@
+<form [formGroup]="Form" (ngSubmit)="handleSubmitAction()">
+    <div class="input-field">
+        <!-- <label for="title">Title</label> -->
+        <input formControlName="title" name="title" id="title" placeholder="Title">
+    </div>
+    <div class="input-field">
+        <!-- <label for="price">Price</label> -->
+        <input type="number" name="price" id="price" formControlName="price" placeholder="price">
+    </div>
+    <button type="submit" class="btn">Ajouter</button>
+</form>
+<br>
+
+
+

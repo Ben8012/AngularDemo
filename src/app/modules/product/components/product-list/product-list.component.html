@@ -1,0 +1,14 @@
+<ul>
+    <div class="row" style="border: solid 1px lightgray;padding: 2%;" *ngFor="let product of Products; let i = index">
+        <div class="col s6">
+          <p> nom : {{product.title | uppercase}}</p>
+          <p>  prix : {{product.price | currency: 'EUR' }}</p>
+        </div>
+        <div class="col s6">
+          <button style="margin:5px" type="button" class="btn" (click)="handelRemoveProduct(product.id)">delete</button>
+          <button style="margin:5px" type="button" class="btn" (click)="handelUpdateProduct(product)">update</button>
+        </div>
+
+
+    </div>
+</ul>
