@@ -1,13 +1,16 @@
-<form [formGroup]="Form" (ngSubmit)="handleSubmitAction()">
+<form [formGroup]="Form" (ngSubmit)="handleSubmitAction()" >
+
+    <h4>Add a product</h4>
     <div class="input-field">
         <!-- <label for="title">Title</label> -->
         <input formControlName="title" name="title" id="title" placeholder="Title">
     </div>
     <div class="input-field">
         <!-- <label for="price">Price</label> -->
-        <input type="number" name="price" id="price" formControlName="price" placeholder="price">
+        <input type="number" name="price" id="price" formControlName="price" placeholder="Price">
     </div>
-    <button type="submit" class="btn">Ajouter</button>
+    <button type="submit" class="btn">Add</button>
+
 </form>
 <br>
 

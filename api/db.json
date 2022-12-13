@@ -9,6 +9,11 @@
       "title": "test",
       "price": 5,
       "id": 11
+    },
+    {
+      "title": "yoyo",
+      "price": 2.3,
+      "id": 12
     }
   ]
 }
