@@ -15,10 +15,10 @@ export class AuthService {
     ) { }
 
     login(params: any) {
-        return this.$http.post<any>(`http://localhost:3000/login`, params)
+        return this.$http.post<any>(`http://localhost:3000/login`, params).subscribe(data => this.$session.open(data.user.id, data.user.username));
     }
 
     register(user: any) {
-        this.$http.post<any>(`http://localhost:3000/register`, user).subscribe(({user, accessToken}) => this.$session.open(user.id, user.email))
+        this.$http.post<any>(`http://localhost:3000/register`, user).subscribe(({user, accessToken}) => this.$session.open(user.id, user.username))
     }
 }

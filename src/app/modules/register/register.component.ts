@@ -24,8 +24,8 @@ export class RegisterComponent {
 
   handleSubmitAction(){
     if (this.formRegister.valid) {
-      const {email, password, username} = this.formRegister.value;
-      this.$auth.register({email, password});
+      //const {email, password, username} = this.formRegister.value;
+      this.$auth.register(this.formRegister.value);
     }
   }
 }

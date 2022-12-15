@@ -20,7 +20,7 @@ export class LoginComponent {
   handleSubmitAction(){
     if (this.formLogin.valid) {
       const {email, password} = this.formLogin.value;
-      this.$auth.login({email, password}).subscribe(data => this.$session.open(data.user.id, data.user.email));
+      this.$auth.login({email, password});
     }
   }
 
