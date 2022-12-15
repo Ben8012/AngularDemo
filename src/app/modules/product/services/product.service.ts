@@ -34,7 +34,8 @@ export class ProductService {
 
     }
 
-    getPage() {
+    getPage()
+    {
         return this.$http.get<any[]>("http://localhost:3000/products")
     }
 
@@ -46,7 +47,7 @@ export class ProductService {
         }
         else
         {
-        return this.$http.put<any>(`http://localhost:3000/products/${id}`, product)
+            return this.$http.put<any>(`http://localhost:3000/products/${id}`, product)
         }
     };
 
