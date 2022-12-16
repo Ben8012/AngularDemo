@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { SessionService } from '../services/session.service';
 
@@ -10,7 +10,8 @@ export class AuthGuard implements CanActivate {
     private user: { id: number } | null = null;
 
     constructor(
-        private $session: SessionService<{ id: number } | null>
+        private $session: SessionService<{ id: number } | null>,
+        private $route : Router
     ) {
         $session.subscribe(user => this.user = user);
     }
@@ -20,7 +21,14 @@ export class AuthGuard implements CanActivate {
         state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
         const roles = route.data['roles'] || [];
 
-        return this.user != null;
+        if(this.user)
+        {
+          return true;
+        }
+        else {
+          this.$route.navigate(['/home']);
+          return false;
+        }
     }
 
 }

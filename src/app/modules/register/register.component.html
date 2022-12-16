@@ -1,11 +1,16 @@
-<form [formGroup]="FormRegister" (ngSubmit)="handleSubmitAction()" >
+<form autocomplete="off"  [formGroup]="FormRegister" (ngSubmit)="handleSubmitAction()" >
+    <br>
+    <label for="username">Name</label>
     <div class="input-field">
-        <input type="text" formControlName="username" name="username" id="username" placeholder="Username">
+        <input type="text" formControlName="username" name="username" id="username" placeholder="Username" >
     </div>
 
+    <label for="email">Email</label>
     <div class="input-field">
         <input type="text" formControlName="email" name="email" id="email" placeholder="Email">
     </div>
+
+    <label for="password">Password</label>
     <div class="input-field">
         <input type="password" name="password" id="password" formControlName="password" placeholder="Password">
     </div>
