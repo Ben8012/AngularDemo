@@ -1,0 +1,20 @@
+voici les commandes a faire pour installer les dépendances de l'appliction
+
+npm install
+
+npm install -g json-server
+
+npm install -D json-server json-server-aut
+
+npm install --save @types/materialize-css
+
+npm install materialize-css --save
+
+npm run start:api
+
+
+
+
+dans une autre console =>
+
+ng s --open
