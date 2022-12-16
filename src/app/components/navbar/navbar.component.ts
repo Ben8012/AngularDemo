@@ -12,15 +12,12 @@ export class NavbarComponent {
   user: { label: string } | null = null;
 
   constructor(
-      // private $auth: AuthService,
       private $session: SessionService<{ id: number, label: string }>
-  ) {
-      $session.subscribe((user) => this.user = user);
-  }
+      ) {
+          $session.subscribe((user) => this.user = user);
+      }
 
-  // handleLoginAction() {
-  //     this.$auth.login({ "username": "Flavian", "password": "Blop" }).subscribe(user => this.$session.open(user.id, user.username));
-  // }
+
 
   handleLogoutAction() {
       this.$session.close();

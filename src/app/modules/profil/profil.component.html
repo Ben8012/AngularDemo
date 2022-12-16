@@ -1,0 +1,17 @@
+<div class="container">
+  <form [formGroup]="FormProfil" (ngSubmit)="handleSubmitAction()" >
+
+    <div class="input-field">
+        <input type="text" name="username" formControlName="username" >
+    </div>
+    <div class="input-field">
+        <input type="email" name="email" formControlName="email" >
+    </div>
+    <!-- <div class="input-field">
+      <input type="password" name="password" formControlName="password" placeholder="Password">
+    </div> -->
+    <button type="submit" class="btn">Change</button>
+</form>
+<br>
+
+</div>

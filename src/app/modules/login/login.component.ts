@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { FLogin } from './forms/login.form';
@@ -15,12 +16,16 @@ export class LoginComponent {
 
   get FormLogin(): FormGroup { return this.formLogin; }
 
-  constructor(private $session: SessionService<{ id: number, label: string }>, private $auth: AuthService, ) { }
+  constructor(
+     private $auth: AuthService,
+     private $route : Router
+     ) { }
 
   handleSubmitAction(){
     if (this.formLogin.valid) {
       const {email, password} = this.formLogin.value;
       this.$auth.login({email, password});
+      this.$route.navigate(["/home"]);
     }
   }
 

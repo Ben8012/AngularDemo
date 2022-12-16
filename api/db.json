@@ -18,22 +18,16 @@
   ],
   "users": [
     {
-      "email": "benjamin@gmail.com",
+      "email": "ben@mail.com",
       "password": "$2a$10$Q3uyvKoSpNv7OiJgv13yxeWNBWVWD5i.7ELfZc3W6U1XbLyZw6ojO",
       "username": "benjamin",
       "id": 1
     },
     {
-      "email": "test@mail.be",
-      "password": "$2a$10$HMsjsgISfLwJjxEP5/ImCuPfJmITGPJje8FhVC23G4DIQ3Tpx7k3i",
-      "username": "test",
-      "id": 2
-    },
-    {
       "email": "jean@mail.com",
-      "password": "$2a$10$w3utZj//oPykdEYynDarNuglyd2oHzah8FaZ..F4l1e/bEogPuDHy",
+      "password": "$2a$10$ef1WiQSqz5GjtQsxFuHTHOUaydI7tZ9i5kUzCC03MCbl8vLzQKacK",
       "username": "jean",
-      "id": 3
+      "id": 2
     }
   ]
 }
