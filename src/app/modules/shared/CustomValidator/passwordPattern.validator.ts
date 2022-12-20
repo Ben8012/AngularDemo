@@ -10,7 +10,7 @@ export const passwordValidator: () => ValidatorFn = () => {
       let hasLower = /[a-z]/.test(f1Value);
       let hasSpecial = /[\$\*\=\+]/.test(f1Value);
 
-      const valid = hasNumber && hasUpper && hasLower
+      const valid = hasNumber && hasUpper && hasLower && hasSpecial
       //&& hasSpecial;
       if (!valid) {
          // return what´s not valid
@@ -18,7 +18,7 @@ export const passwordValidator: () => ValidatorFn = () => {
          if(!hasNumber) errors['number'] = 'il manque un nombre';
          if(!hasUpper) errors['upper'] = 'il manque une majuscule';
          if(!hasLower) errors['lower'] = 'il manque une minuscule';
-         if(!hasLower) errors['special'] = 'il manque un carracter spécial compris dans $*=+';
+         if(!hasSpecial) errors['special'] = 'il manque un carracter spécial compris dans $*=+';
          return errors;
       }
       return null;

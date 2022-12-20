@@ -6,8 +6,6 @@ export const checkPasswords: (field1: string, field2: string) => ValidatorFn = (
     let field1Ctrl = group.get(f1);
     let field2Ctrl = group.get(f2);
 
-
-
     if (field1Ctrl?.value && field2Ctrl?.value) {
       const f1Value = field1Ctrl.value;
       const f2Value = field2Ctrl.value;
