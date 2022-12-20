@@ -25,11 +25,12 @@ export class SessionService<T> implements OnInit {
     ngOnInit(): void {
     }
 
-    open(id: number, label: string) {
+    open(id: number, label: string, token:string) {
         if (this.user) return;
-        this.user = { id, label } as T;
+        this.user = { id, label, token } as T;
         localStorage.setItem("user", JSON.stringify(this.user));
         this.user$.next(this.user);
+        console.log(this.user)
     }
 
     close() {

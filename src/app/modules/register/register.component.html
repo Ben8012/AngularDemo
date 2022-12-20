@@ -1,19 +1,77 @@
+{{ FormRegister.errors |json }}
 <form autocomplete="off"  [formGroup]="FormRegister" (ngSubmit)="handleSubmitAction()" >
     <br>
-    <label for="username">Name</label>
+    <label for="firstname">FirstName</label>
     <div class="input-field">
-        <input type="text" formControlName="username" name="username" id="username" placeholder="Username" >
+        <input type="text" formControlName="firstname" name="firstname" id="firstname" placeholder="Firstname" >
+        <div *ngIf="Firstname.invalid && (Firstname.dirty || Firstname.touched)">
+          <div class="errors" *ngIf="Firstname.errors['required']">Fistname est requis</div>
+          <div class="errors" *ngIf="Firstname.errors['minlength']">longueur minimum doit etre de 4 characteres </div>
+          <div class="errors" *ngIf="Firstname.errors['maxlength']">longueur maximum ne peut depasser 250 characteres</div>
+        </div>
+    </div>
+
+    <label for="lastname">LastName</label>
+    <div class="input-field">
+        <input type="text" formControlName="lastname" name="lastname" id="lastname" placeholder="Lastname" >
+        <div *ngIf="Lastname.invalid && (Lastname.dirty || Lastname.touched)">
+          <div class="errors" *ngIf="Lastname.errors['required']">Lastname est requis</div>
+          <div class="errors" *ngIf="Lastname.errors['minlength']">longueur minimum doit etre de 4 characteres </div>
+          <div class="errors" *ngIf="Lastname.errors['maxlength']">longueur maximum ne peut depasser 250 characteres</div>
+        </div>
+    </div>
+
+
+    <label for="birthdate">Birthdate</label>
+    <div class="input-field">
+        <input type="date" formControlName="birthdate" name="birthdate" id="birthdate" placeholder="Birthdate" >
+        <div *ngIf="Birthdate.invalid && (Birthdate.dirty || Birthdate.touched)">
+          <div class="errors" *ngIf="Birthdate.errors['required']">Birthdate est requis</div>
+        </div>
     </div>
 
     <label for="email">Email</label>
     <div class="input-field">
-        <input type="text" formControlName="email" name="email" id="email" placeholder="Email">
+        <input type="email" formControlName="email" name="email" id="email" placeholder="Email">
+        <div *ngIf="Email.invalid && (Email.dirty || Email.touched)">
+          <div class="errors" *ngIf="Email.errors['required']">Email est requis</div>
+          <div class="errors" *ngIf="Email.errors['email']">Email doit etre de type email</div>
+        </div>
     </div>
 
     <label for="password">Password</label>
     <div class="input-field">
         <input type="password" name="password" id="password" formControlName="password" placeholder="Password">
+        <div *ngIf="Password.invalid && (Password.dirty || Password.touched)">
+          <!-- {{ Password.errors |json }} -->
+          <div class="errors" *ngIf="Password.errors['required']">password est requis</div>
+          <div class="errors" *ngIf="Password.errors['minlength']">longueur minimum doit etre de 4 characteres </div>
+          <div class="errors" *ngIf="Password.errors['maxlength']">longueur maximum ne peut depasser 250 characteres</div>
+          <div class="errors" *ngIf="Password.errors['number']">{{Password.errors['number']}}</div>
+          <div class="errors" *ngIf="Password.errors['upper']">{{Password.errors['upper']}}</div>
+          <div class="errors" *ngIf="Password.errors['lower']">{{Password.errors['lower']}}</div>
+          <div class="errors" *ngIf="Password.errors['special']">{{Password.errors['special']}}</div>
+
+        </div>
     </div>
+
+    <label for="passwordConfirm">Password confirm</label>
+    <div class="input-field">
+        <input type="password" name="passwordConfirm" id="passwordConfirm" formControlName="passwordConfirm" placeholder="Password Confirm">
+        <div *ngIf="ConfirmPassword.invalid && (ConfirmPassword.dirty || ConfirmPassword.touched)">
+          {{ ConfirmPassword.errors |json }}
+          <div class="errors" *ngIf="ConfirmPassword.errors['required']">ConfirmPassword est requis</div>
+          <div class="errors" *ngIf="ConfirmPassword.errors['minlength']">longueur minimum doit etre de 4 characteres </div>
+          <div class="errors" *ngIf="ConfirmPassword.errors['maxlength']">longueur maximum ne peut depasser 250 characteres</div>
+          <div class="errors" *ngIf="ConfirmPassword.errors['number']">{{ConfirmPassword.errors['number']}}</div>
+          <div class="errors" *ngIf="ConfirmPassword.errors['upper']">{{ConfirmPassword.errors['upper']}}</div>
+          <div class="errors" *ngIf="ConfirmPassword.errors['lower']">{{ConfirmPassword.errors['lower']}}</div>
+          <div class="errors" *ngIf="ConfirmPassword.errors['special']">{{ConfirmPassword.errors['special']}}</div>
+          <div class="errors" *ngIf="FormRegister.getError('passwordMatch') as error">{{error}}</div>
+        </div>
+    </div>
+
+
     <button type="submit" class="btn">Register</button>
 </form>
 <br>

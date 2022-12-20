@@ -25,7 +25,6 @@ export class LoginComponent {
     if (this.formLogin.valid) {
       const {email, password} = this.formLogin.value;
       this.$auth.login({email, password});
-      this.$route.navigate(["/home"]);
     }
   }
 

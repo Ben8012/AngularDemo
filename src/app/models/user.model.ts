@@ -1,7 +1,10 @@
 import { Adress } from "./adress.model";
 
 export interface User {
-    username: string;
+    firstname: string;
+    lastname: string;
+    email: string;
+    birthdate: string;
     password : string;
     addresses: Adress[];
 };
